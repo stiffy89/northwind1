@@ -9,7 +9,7 @@ module.exports = cds.service.impl(async function() {
 		const {Products} = northwindservice.entities;
 		let results = await northwindservice.run(SELECT.from(Products));
 
-		for (var i in results){
+		/* for (var i in results){
 			let aDateDisp = results[i].ReleaseDate.split("T")[0].split("-");
 			let sDateDisp = aDateDisp[2] + "/" + aDateDisp[1] + "/" + aDateDisp[0]
 			results[i].DateDisp = sDateDisp;
@@ -27,7 +27,7 @@ module.exports = cds.service.impl(async function() {
 			let iDayDiff = Math.ceil((oTodayDate - oReleaseDate) / (1000 * 3600 * 24)) % 365;
 
 			results[i].ReleaseDays = iYearsDiff.toString() + " years " + iDayDiff.toString() + " days";
-		}
+		} */
 
 		results.$count = results.length;
 		return results;

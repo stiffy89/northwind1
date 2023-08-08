@@ -11,6 +11,11 @@ annotate service.Products with @(
             $Type : 'UI.DataField',
             Label : 'Product Description',
             Value : Description,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Price',
+            Value : Price,
         }
     ]
 );
