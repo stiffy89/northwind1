@@ -51,7 +51,8 @@
                 "sap.m": {},
                 "sap.ui.core": {},
                 "sap.ushell": {},
-                "sap.fe.templates": {}
+                "sap.fe.templates": {},
+                "sap.f": {}
             }
         },
         "contentDensities": {
@@ -84,17 +85,28 @@
             "css": []
         },
         "routing": {
-            "config": {},
+            "config": {
+                "flexibleColumnLayout": {
+                    "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+                    "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+                },
+                "routerClass": "sap.f.routing.Router"
+            },
             "routes": [
                 {
                     "pattern": ":?query:",
                     "name": "ProductsList",
-                    "target": "ProductsList"
+                    "target": [
+                        "ProductsList"
+                    ]
                 },
                 {
                     "pattern": "Products({key}):?query:",
                     "name": "ProductsObjectPage",
-                    "target": "ProductsObjectPage"
+                    "target": [
+                        "ProductsList",
+                        "ProductsObjectPage"
+                    ]
                 }
             ],
             "targets": {
@@ -115,7 +127,9 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "controlAggregation": "beginColumnPages",
+                    "contextPattern": ""
                 },
                 "ProductsObjectPage": {
                     "type": "Component",
@@ -126,9 +140,22 @@
                             "editableHeaderContent": false,
                             "entitySet": "Products"
                         }
-                    }
+                    },
+                    "controlAggregation": "midColumnPages",
+                    "contextPattern": "/Products({key})"
                 }
             }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {}
+            }
+        },
+        "rootView": {
+            "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+            "type": "XML",
+            "async": true,
+            "id": "appRootView"
         }
     },
     "sap.fiori": {
