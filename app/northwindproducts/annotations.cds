@@ -16,11 +16,6 @@ annotate service.Products with @(
             $Type : 'UI.DataField',
             Label : 'Price',
             Value : Price,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'Rating',
-            Value : Rating,
         }
     ]
 );

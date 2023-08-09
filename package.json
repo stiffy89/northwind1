@@ -10,7 +10,8 @@
         "@sap/cds": "^7",
         "@sap/xssec": "^3",
         "express": "^4",
-        "passport": "^0"
+        "passport": "^0",
+        "debug": "^4.3"
     },
     "devDependencies": {
         "@cap-js/sqlite": "^1",

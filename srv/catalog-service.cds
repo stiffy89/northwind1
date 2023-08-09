@@ -3,6 +3,10 @@ using Catalog from '../db/schema';
 
 service CatalogService {
 
-    entity Products as projection on Catalog.Products;
+    entity Products as projection on Catalog.Products {
+        key ID,
+            Name,
+            Description
+    }
 
 }
