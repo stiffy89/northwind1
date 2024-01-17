@@ -10,6 +10,7 @@ module.exports = cds.service.impl(async function() {
 		//build the query for products
 
 		const {Products} = northwindservice.entities;
+		console.log(JSON.stringify(req.query));
 		let results = await northwindservice.run(req.query);
 		return results;
 	});
